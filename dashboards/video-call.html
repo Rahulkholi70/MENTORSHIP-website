@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VIDEO CALL</title>
+        <style>
+            #root {
+                width: 100vw;
+                height: 100vh;
+                }
+        </style>
+    </head>
+    <body> 
+    <div id="root"></div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+<script>
+    
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyCOBszRefXYAFRCywzQ6ac-RcSJr7XgHfI",
+                authDomain: "mentorshala-web.firebaseapp.com",
+                databaseURL: "https://mentorshala-web-default-rtdb.firebaseio.com",
+                projectId: "mentorshala-web",
+                storageBucket: "mentorshala-web.appspot.com",
+                messagingSenderId: "794994820774",
+                appId: "1:794994820774:web:6b9f0b12d9e5fa08bf1667",
+                measurementId: "G-7LMYBSX7D3",
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+
+window.onload = function () {
+    function getUrlParams(url) {
+        let urlStr = url.split('?')[1];
+        const urlSearchParams = new URLSearchParams(urlStr);
+        const result = Object.fromEntries(urlSearchParams.entries());
+        return result;
+    } 
+    const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
+    const userID = Math.floor(Math.random() * 10000) + "";
+    const userName = "userName" + userID;
+    const appID = 170172193;
+    const serverSecret = "7b4f9b8c1ebb60a2ba61868b4075fedf";
+    const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName); 
+        const zp = ZegoUIKitPrebuilt.create(kitToken);
+        zp.joinRoom({
+            container: document.querySelector("#root"),
+            sharedLinks: [{
+                name: 'Personal link',
+                url: window.location.protocol + '//' + window.location.host  + window.location.pathname + '?roomID=' + roomID,
+            }],
+            scenario: {
+                mode: ZegoUIKitPrebuilt.VideoConference,
+            }, 
+           	turnOnMicrophoneWhenJoining: true,
+           	turnOnCameraWhenJoining: true,
+           	showMyCameraToggleButton: true,
+           	showMyMicrophoneToggleButton: true,
+           	showAudioVideoSettingsButton: true,
+           	showScreenSharingButton: true,
+           	showTextChat: true,
+           	showUserList: true,
+           	maxUsers: 2,
+           	layout: "Auto",
+           	showLayoutButton: false,
+         
+            });
+            const menteeID = localStorage.getItem('menteeID'); // Retrieve menteeID from local storage
+            if (menteeID) {
+                database.ref('mentees/' + menteeID + '/roomID').set(roomID)
+                    .then(() => {
+                        console.log("Room ID saved to Firebase successfully.");
+                    })
+                    .catch((error) => {
+                        console.error("Error saving room ID to Firebase: ", error);
+                    });
+            } else {
+                console.error("No menteeID found in local storage.");
+            }
+
+}
+</script>
+
+</html>

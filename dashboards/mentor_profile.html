@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+      } 
+      .container-fluid {
+        margin-top: 30px;
+      } 
+      .sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        background-color: #343a40;
+        color: #fff;
+        padding-top: 20px;
+      } 
+      .sidebar a {
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        color: #ddd;
+        display: block;
+      } 
+      .sidebar a:hover {
+        background-color: #575d63;
+        color: white;
+      } 
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+      } 
+      .card {
+        border: none;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      } 
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+      } 
+      .card-body {
+        padding: 20px;
+      } 
+      .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+      } 
+      .card-text {
+        font-size: 18px;
+        color: #666;
+      } 
+      .card-img-top {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      } 
+      .btn-primary {
+        background-color: #4caf50;
+        border: none;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-top: 10px;
+      } 
+      .btn-primary:hover {
+        background-color: #45a049;
+      } 
+      .request-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #e9ecef;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      } 
+      .request-btn:hover {
+        background-color: #d6d8db;
+      } 
+      .request-text {
+        flex-grow: 1;
+      } 
+      .request-actions {
+        margin-left: 10px;
+      } 
+      .tab-pane {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+      } 
+      .event-container {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px;
+      } 
+      .event-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      } 
+      .event-actions button {
+        margin-left: 10px;
+      }
+    </style>
+  </head> 
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="sidebar">
+          <nav class="nav flex-column">
+            <a class="nav-link active" href="#profileTab" data-toggle="tab" >Profile</a >
+            <a class="nav-link" href="#settingsTab" data-toggle="tab" >Requests</a >
+            <a class="nav-link" href="#acceptedRequestsTab" data-toggle="tab">Scheduled Meetings</a>
+            <a class="nav-link" href="#Events" data-toggle="tab">Events</a>
+          </nav>
+        </div>
+        <div class="content col-md-9 tab-content">
+          <div id="profileTab" class="tab-pane fade show active">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-3"> 
+                  <img id="imga" src="/assests/logo.png" class="card-img-top" alt="User Image" />
+                  <input type="file" id="fileInput" style="display: none" /> 
+                  <div class="card-body">
+                    <h5 class="card-title" id="fullName"></h5>
+                    <p class="card-text" id="UID">UID</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title">Profile Information</h5>
+                    <p class="card-text">
+                      <strong>Bio:</strong> <span id="bio"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Contact:</strong> <span id="contact"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Email:</strong> <span id="email"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Experience:</strong> <span id="experience"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Expertise:</strong> <span id="expertise"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Availability:</strong>
+                      <span id="availability"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Qualifications:</strong>
+                      <span id="qualifications"></span>
+                    </p>
+                    <button class="btn btn-primary" id="editBtn">Edit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Events" class="tab-pane fade">
+            <div id="createEventForm">
+              <input type="text" id="eventName" placeholder="Event Name" />
+              <input type="date" id="eventDate" placeholder="Event Date" />
+              <input type="time" id="eventTime" placeholder="Event Time" />
+              <button id="createEventBtn" class="btn btn-primary">
+                Create Event
+              </button>
+            </div>
+            <div id="eventList"></div>
+          </div> 
+          <div id="settingsTab" class="tab-pane fade">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Requests</h5>
+                <div id="requestList"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="acceptedRequestsTab" class="tab-pane fade">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Accepted Requests</h5>
+                <div id="acceptedRequestList"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="mentor_profile.js"></script>
+  </body>
+</html>

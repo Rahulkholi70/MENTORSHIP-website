@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container-fluid {
+      margin-top: 30px;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #343a40;
+      color: #fff;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ddd;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #575d63;
+      color: white;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      border: none;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .card-text {
+      font-size: 18px;
+      color: #666;
+    }
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .btn-primary {
+      background-color: #4caf50;
+      border: none;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .btn-primary:hover {
+      background-color: #45a049;
+    }
+    .tab-pane {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    } 
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="sidebar">
+        <nav class="nav flex-column">
+          <a class="nav-link active" href="#profileTab" data-toggle="tab">Profile</a>
+          <a class="nav-link" href="#chatTab" data-toggle="tab">Chat</a>
+        </nav>
+      </div>
+      <div class="content col-md-9 tab-content">
+        <div id="profileTab" class="tab-pane fade show active">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-3">
+                <input type="file" id="uploadImage" style="display: none;" />
+                <img class="card-img-top" id="profileImage" src="/assests/useravatar.png" alt="Profile Image">
+                <div class="card-body">
+                  <h5 class="card-title" id="fullName"></h5>
+                  <p class="card-text" id="UID">UID</p> 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Profile Information</h5>
+                  <p class="card-text"><strong>About Me:</strong> <span id="aboutMe"></span></p>
+                  <p class="card-text"><strong>Contact Information:</strong> <span id="contactInfo"><br /></span></p>
+                  <p class="card-text"><strong>Education:</strong> <span id="education"></span></p>
+                  <p class="card-text"><strong>Skills:</strong> <span id="skills"></span></p>
+                  <p class="card-text"><strong>Projects:</strong> <span id="projects"><br /></span></p>
+                  <p class="card-text"><strong>Extracurricular Activities:</strong> <span id="activities"></span></p>
+                  <button class="btn btn-primary" id="editBtn">Edit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="chatTab" class="tab-pane fade"> <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">My Mentors</h5>
+            <p> <i>join 1 minute after given time</i></p>
+            <div id="requestList"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-storage.js"></script>  
+  <script type="module" src="mentee_profile.js"></script> 
+  </body>
+</html>
