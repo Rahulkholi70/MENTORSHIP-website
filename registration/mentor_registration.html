@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentor Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3f2fd;
+      margin-bottom: 50px; 
+    } 
+    .container {
+      max-width: 600px; 
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    button {
+      max-width: 20vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="registration-container">
+      <div class="text-center">
+        <p>Already a member? <a href="/Loginpage/mentor_login.html">Login Here</a></p>
+      </div>
+    <h2 class="mb-4">Mentor Registration Form</h2>
+    <form id="mentorRegistrationForm">
+      <div class="form-group">
+        <label for="mentorFullName">Full Name:</label>
+        <input type="text" class="form-control" id="mentorFullName" required />
+      </div>
+      <div class="form-group">
+        <label for="mentorEmail">Email:</label>
+        <input type="email" class="form-control" id="mentorEmail" required />
+      </div>
+      <div class="form-group">
+        <label for="mentorPassword">Password:</label>
+        <input type="password" class="form-control" id="mentorPassword" required />
+      </div>
+      <div class="form-group">
+        <label for="mentorPnumber">Phone Number</label>
+        <input type="tel" class="form-control" id="mentorPnumber" required />
+      </div>
+      <div class="form-group">
+        <label for="mentorExpertise">Area of Expertise:</label>
+        <input type="text" class="form-control" id="mentorExpertise" required />
+      </div> 
+      
+      <div class="form-group">
+        <label for="mentorExperience">Years of Experience:</label>
+        <input type="number" class="form-control" id="mentorExperience" required>
+      </div>
+      <div class="form-group">
+        <label for="mentorBio">Bio or Description:</label>
+        <textarea class="form-control" id="mentorBio" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="mentorAvailability">Availability:</label>
+        <textarea class="form-control" id="mentorAvailability" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="mentorQualifications">Qualifications or Certifications:</label>
+        <textarea class="form-control" id="mentorQualifications" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="mentorMotivation">Motivation for Mentoring:</label>
+        <textarea class="form-control" id="mentorMotivation" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="registerMentorBtn"> 
+        Register
+      </button>
+      <div class="form-group ">
+        <h5>Not a mentee? Register as a Mentor instead:</h5>
+        <button class="btn btn-secondary" id="switchToMentee">
+          Switch to Mentee Registration
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+
+<script>
+  document
+    .getElementById("switchToMentee")
+    .addEventListener("click", function () {
+      window.location.href = "mentee_registration.html"; 
+    });
+</script> 
+<script type="module" src="mentor_registrationjs.js" ></script> 
+</html>

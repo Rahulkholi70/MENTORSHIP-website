@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorshala - Empowering Mentorship</title>
+    <!-- MDB Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (optional) -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Mulish", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        .blog-header {
+            background-color: #0062ff21;
+            color: #000000;
+            text-align: center;
+            padding: 2rem 0;
+            -webkit-box-shadow: -2px 7px 41px 0px rgba(0, 0, 0, 0.43);
+            -moz-box-shadow: -2px 7px 41px 0px rgba(0, 0, 0, 0.43);
+            box-shadow: -2px 7px 41px 0px rgba(0, 0, 0, 0.43);
+            ;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .blog-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        .blog-post {
+            margin-bottom: 4rem;
+        }
+
+        .blog-post-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .blog-post-meta {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-link {
+            font-size: 1.1rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .sidebar-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 2rem 0;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <img src="/assests/logo.png" id="navlogo" loading="lazy" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-button">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourMentor.html">Meet Our Mentor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html">Blogs</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" id="search-form">
+                    <input autocomplete="off" type="search" class="form-control me-2" placeholder="Search"
+                        id="search" />
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="fas fa-search" id="srch-button"></i>
+                    </button>
+                </form>
+                <ul class="navbar-nav">
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
+                                height="22" alt="Portrait of a Woman" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" id="profile-button">My profile</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" id="logout-button">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Blog Header -->
+    <header class="blog-header text-black">
+        <div class="container">
+            <h1 class="blog-title">Welcome to Mentorshala Blog!</h1>
+            <p class="blog-subtitle">Empowering Mentorship Through Events, Webinars, and Virtual Connections</p>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Upcoming Events and Webinars</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala Team</a></p>
+                    <p class="blog-post-content">
+                        Stay tuned for our exciting lineup of events and webinars designed to foster mentorship and
+                        professional growth. Whether you're looking to expand your network, gain new insights, or
+                        connect with industry experts, our events offer valuable opportunities for learning and
+                        development.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Feedback System: Your Voice Matters!</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala Team</a></p>
+                    <p class="blog-post-content">
+                        At Mentorshala, we value your feedback to continuously improve our mentorship programs and
+                        services. Our feedback system allows you to share your thoughts, suggestions, and experiences,
+                        ensuring that we meet your expectations and provide meaningful support on your mentorship
+                        journey.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">User Profiles: Showcasing Mentorship Success Stories</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala Team</a></p>
+                    <p class="blog-post-content">
+                        Discover inspiring stories from our mentorship community through user profiles. From mentees
+                        achieving career milestones to mentors making a difference in their fields, our user profiles
+                        highlight the impact of mentorship and celebrate the successes achieved through collaborative
+                        learning and support.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Enhancing Mentorship with Video Call System</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala Team</a></p>
+                    <p class="blog-post-content">
+                        Our video call system enables seamless virtual mentorship sessions, connecting mentors and
+                        mentees regardless of location. Experience interactive discussions, personalized guidance, and
+                        real-time feedback through our secure and user-friendly platform, designed to enhance your
+                        mentorship experience anytime, anywhere.
+                    </p>
+                </article>
+                <article class="blog-post">
+                    <h2 class="blog-post-title">The Importance of Mentorship: A Pathway to Success</h2>
+                    <p class="blog-post-meta">January 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Mentorship is crucial for personal and professional growth. It provides guidance, support, and
+                        insights that help individuals navigate their careers and personal lives more effectively.
+                        Through mentorship, mentees can learn from the experiences and wisdom of mentors, gaining
+                        valuable skills and perspectives that contribute to their success.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Tips for Finding the Right Mentor</h2>
+                    <p class="blog-post-meta">February 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Finding the right mentor can significantly impact your development and career trajectory. Here
+                        are some tips to help you find a mentor who aligns with your goals and values:
+                    <ul>
+                        <li>Define your goals and what you seek in a mentor.</li>
+                        <li>Look within your network for potential mentors.</li>
+                        <li>Attend networking events and conferences to meet new people.</li>
+                        <li>Reach out to mentors with a clear and concise request.</li>
+                        <li>Be open to learning and feedback from your mentor.</li>
+                    </ul>
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Benefits of Being a Mentor</h2>
+                    <p class="blog-post-meta">March 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Being a mentor is not just about giving back; it's a rewarding experience that can enhance your
+                        leadership skills and personal growth. Mentors have the opportunity to share their knowledge,
+                        inspire others, and build lasting relationships. Additionally, mentoring can help mentors stay
+                        connected to new ideas and perspectives in their field.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Challenges in Mentorship and How to Overcome Them</h2>
+                    <p class="blog-post-meta">April 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        While mentorship can be incredibly rewarding, it also comes with its challenges. Common
+                        challenges include communication barriers, time constraints, and differing expectations. To
+                        overcome these challenges, it's essential to establish clear goals and expectations from the
+                        beginning, maintain open communication, and be flexible and patient throughout the mentorship
+                        journey.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">The Role of Emotional Intelligence in Mentorship</h2>
+                    <p class="blog-post-meta">May 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Emotional intelligence (EI) plays a crucial role in mentorship relationships. Mentors with high
+                        EI can better understand and manage their own emotions and those of their mentees. This ability
+                        fosters trust, effective communication, and mutual respect, creating a supportive environment
+                        for learning and growth.
+                    </p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title">The Impact of Technology on Modern Mentorship</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Technology has revolutionized mentorship by enabling virtual mentoring, online resources, and
+                        global connections. Virtual mentoring platforms allow mentors and mentees to connect regardless
+                        of geographic location, making mentorship more accessible and flexible. However, it's essential
+                        to balance technology with face-to-face interactions to build meaningful relationships and
+                        maximize mentorship outcomes.
+                    </p>
+                </article>
+                <article class="blog-post">
+                    <h2 class="blog-post-title">Navigating Career Transitions with Mentorship</h2>
+                    <p class="blog-post-meta">June 2024 by <a href="#">Mentorshala team</a></p>
+                    <p class="blog-post-content">
+                        Mentorship plays a crucial role in helping individuals navigate career transitions. Whether
+                        you're switching industries, roles, or advancing in your current career path, having a mentor
+                        can provide guidance, support, and valuable insights. In this blog post, we'll explore how
+                        mentorship can smooth the journey between careers and offer practical tips on finding the right
+                        mentor during a career transition.
+                    </p>
+                </article>
+            </div>
+            <aside class="col-md-4">
+                <div class="sidebar">
+                    <h3 class="sidebar-title">Recent Events</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html">Upcoming Mentorship Workshop - July 2024</a></li>
+                        <li><a href="events.html">Webinar: Leadership Skills for Young Professionals</a></li>
+                        <li><a href="events.html">Networking Event: Building Connections in Tech Industry</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar mt-4">
+                    <h3 class="sidebar-title">Connect with Us</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="sidebar-link">Facebook</a></li>
+                        <li><a href="#" class="sidebar-link">Twitter</a></li>
+                        <li><a href="#" class="sidebar-link">Instagram</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Mentorshala. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a id="home" class="footer-link">Home</a></li>
+                <li class="list-inline-item"><a id="event" class="footer-link">event</a></li>
+                <li class="list-inline-item"><a id="aboutus" class="footer-link">About Us</a></li>
+
+            </ul>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+    <script src="home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchForm = document.getElementById('search-form');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    var searchQuery = document.getElementById('search').value.trim().toLowerCase();
+                    var pages = {
+                        'dashboard': 'mentor_profile.html',
+                        'profile': 'mentee_profile.html',
+                        'mentor': 'Ourmentor.html',
+                        'about': 'about.html',
+                        'blog': 'blog.html',
+                        'events': 'events.html',
+                        'developer': 'Ourmentor.html',
+                        'web developer': 'Ourmentor.html',
+                        'software engineer': 'Ourmentor.html',
+                        'home': 'home.html'
+                    };
+                    if (pages[searchQuery]) {
+                        window.location.href = pages[searchQuery];
+                    } else {
+                        alert('Page not found: ' + searchQuery);
+                    }
+                });
+            } else {
+                console.error('Search form not found');
+            }
+        });
+        document.getElementById("switchToMentor").addEventListener("click", function () {
+            window.location.href = "Ourmentor.html";
+        });
+    </script>
+</body>
+<script src="chatbot.js"></script>
+
+</html>

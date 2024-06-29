@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope GF", sans-serif;
+}
+/* **** Hero Section **** */
+.hero-section {
+  /* margin-top: 100px; */
+  height: auto;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+.container {
+  height: auto;
+  width: 100%;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Top-feature {
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.contain_course{
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+h1 {
+  margin-top: 20px;
+  height: 10%;
+  width: 100%;
+  margin-left: 10%;
+}
+.features-images {
+  margin-top: 40px;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 10px;
+  border-radius: 20px;
+  height: auto;
+  margin-bottom: 40px;
+  box-shadow:  5px -5px 2px rgb(2, 45, 62);
+}
+.features-images .msg-two{
+  border: none;
+  border-radius: 20px;
+}
+.features-images:hover{
+  transition: all 0.4s ease-in-out;
+  transform: translateY(-5px);
+}
+.features-images .msg-two:hover{
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgb(1, 67, 31);
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.img11{
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 376px;
+}
+.features-images-content {
+  height: 235px;
+  width: 376px;
+  margin-top: -10px;
+  padding: 25px 10px 40px 30px;
+  background-color: #f2f4f4;
+  display: block;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.msg-one {
+  height: 64px;
+  font-size: 25px;
+  font-family: "Manrope GF", sans-serif;
+  color: #06222E;
+  display: inline-block;
+  margin: 10px 0 5px;
+}
+.msg-two {
+  height: 48px;
+  width: 175.75px;
+  padding: 15px 20px;
+  margin: 40px 0px 0px;
+  font-family: "Manrope GF", sans-serif;
+  color: #06222E;
+  background-color: #35E19D33
+}
+
+/** Footer **/
+footer {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-panel-1 a {
+  color: #FFFFFF;
+  background-color: #37475A;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-panel-1 a:hover {
+  color: white;
+  background-color: #2d3f53;
+  /* background-color: #324357; */
+}
+
+.footer-panel-2 {
+  color: white;
+  background-color: #001d3d;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+ul {
+  margin-top: 30px;
+}
+
+ul p {
+  font-weight: bold;
+}
+
+ul a {
+  display: block;
+  text-decoration: none;
+  color: #DDDDDD;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+.footer-panel-3 {
+  color: #FFFFFF;
+  background-color: #001d3d;
+  height: 70px;
+  border-top: 0.5px solid #3A4553;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  height: 50px;
+  width: 100px;
+  background-image: url("Logo.jpg");
+  background-size: cover;
+}
+
+.footer-panel-4 {
+  height: 77px;
+  color: white;
+  background-color: #131A22;
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.pages {
+  color: white;
+  padding-top: 15px;
+  margin-bottom: 5px;
+}
+.handle_content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* justify-content: */
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-basis: row;
+}
+
+  
+
+  /* flex: ; */
+/* CSS properties for the layout when the width is 908px or less */
+@media screen and (max-width: 908px){
+
+  
+/* CSS properties for the layout when the width is 672px or less */
+
+}
+@media screen and (max-width: 672px){
+  .features-images {
+    margin-right: 0px;
+    height: auto;
+    margin-bottom: 0px;
+    /* width: 200px; */
+  }
+}
+
+/* CSS properties for the layout when the width is 412px or less */
+@media screen and (max-width: 412px) {
+  .features-images {
+    margin-right: 0px;
+    height: auto;
+    margin-bottom: 0px;
+    /* width: 200px; */
+  }
+}
+@media screen and (max-width:392px) {
+  .features-images-content{
+    width: auto;
+    height: auto;
+    border: 1px solid red;
+  }
+  .features-images{
+    width: 80vw;
+    /* height: 60vh; */
+    }
+  .features-images img{
+    width: 100%;
+  }
+  .logo_handler img{
+  height: 50px;
+  width: 70px;
+}
+}
+
+@media screen  and (max-width: 292px){
+  .features-images-content button{
+    width: 50vw;
+    height: 10vh;
+  }
+}

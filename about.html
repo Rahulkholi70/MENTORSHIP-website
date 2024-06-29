@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="home.css">
+    <style>
+        body {
+            font-family: "Mulish", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e1e1e3;
+        } 
+        .nav_controller {
+            margin-bottom: 12vh;
+        } 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        } 
+        .container h2 {
+            font-weight: 700;
+        } 
+        .column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        } 
+        header {
+            background-color: #333;
+            color: #fff; 
+            text-align: center;
+        } 
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        } 
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px; 
+        } 
+        .content .column {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        } 
+        .content .column h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        } 
+        .content .column ul {
+            list-style: none;
+            padding: 0;
+        } 
+        .content .column ul li {
+            padding: 5px 0;
+        } 
+        .tick {
+            transition: transform 0.3s ease;
+        } 
+        .tick:hover {
+            transform: scale(1.2);
+        } 
+        .tick-text {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        } 
+        .tick:hover+.tick-text {
+            transform: scale(1.1);
+        } 
+        .image-box img {
+            transition: transform 0.3s ease;
+        } 
+        .image-box:hover img {
+            transform: scale(1.1);
+        } 
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        } 
+        .card {
+            flex-basis: calc(45% - 10px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        } 
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgb(10, 10, 10);
+        } 
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 700;
+        } 
+        .card em {
+            font-style: italic;
+            text-align: center;
+            display: block;
+        } 
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        } 
+        .image-box {
+            width: calc(50% - 10px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } 
+        .image-box img {
+            width: 100%;
+            height: auto;
+        } 
+        .tick {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+        } 
+        .tick::before {
+            content: "\2713";
+            display: block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }  
+        .image {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        } 
+        .image img {
+            max-width: 100%;
+            height: auto;
+        } 
+        @media only screen and (max-width: 800px) {
+            .content {
+                flex-wrap: wrap;
+            } 
+            .content .column {
+                flex: calc(50% - 10px);
+                margin-bottom: 20px;
+            } 
+            .card {
+                flex-basis: 100%;
+            }  
+            .image-container {
+                flex-wrap: wrap;
+            } 
+            .image-box {
+                flex: 100%;
+                margin-bottom: 20px;
+            }
+        } 
+        .navbar-brand img {
+            height: 65px;
+        } 
+        .avatar-search-container {
+            display: flex;
+            align-items: center;
+        } 
+        .avatar-search-container .dropdown-toggle {
+            margin-right: 15px;
+        } 
+        .search-form {
+            flex-grow: 1;
+            max-width: 200px;
+        } 
+        .navbar-toggler {
+            background-image: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #000;
+        } 
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        } 
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        } 
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                justify-content: space-between;
+            }
+
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .navbar-nav .nav-item {
+                padding: 0 10px;
+            }
+
+            .avatar-search-container {
+                order: 1;
+                margin-left: auto;
+            }
+
+            .avatar-search-container .dropdown-toggle {
+                margin-right: 0;
+            }
+
+            .navbar-toggler {
+                background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(0, 0, 0, 0.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22" /%3E%3C/svg%3E');  
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
+        } 
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 50px;
+            text-align: center;
+            font-weight: 900;
+            color: #000;
+        } 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        } 
+        .about-content {
+            /* margin-top: 50px; */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } 
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        } 
+        @media only screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            } 
+            .about-content {
+                padding: 10px;
+            } 
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head> 
+<body> 
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html">
+          <img src="/assests/logo.png" id="navlogo" loading="lazy" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ourMentor.html">Meet Our Mentor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Blog.html">Blogs</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input autocomplete="off" type="search" class="form-control me-2" placeholder="Search" id="search" />
+            <button class="btn btn-outline-success" type="submit">
+              <i class="fas fa-search" id="srch-button"></i>
+            </button>
+          </form>
+          <ul class="navbar-nav">
+            <!-- Avatar -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22"
+                  alt="Portrait of a Woman" loading="lazy" />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" id="profile-button">My profile</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" id="logout-button">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1>About</h1>
+    <div class="container">
+        <div class="about-content">
+            <p>
+                At Mentorshala, we believe that everyone deserves access to
+                personalized guidance and support, regardless of their background,
+                experience, or location. Mentorship should be an integrated part of
+                our lives both at work and in the communities we are a part of. We
+                know firsthand how difficult it can be to find a mentor who is the
+                right fit, which is why we created Mentorshala to solve this problem.
+                Our goal is to enable workplaces to connect people with the resources
+                they need to grow and succeed.
+            </p>
+            <p>
+                Our platform is designed to make mentorship more accessible,
+                efficient, and effective. We have developed a suite of tools that
+                enable organizations to create, manage, and measure mentorship
+                programs at scale. With Mentorshala, mentors and mentees can connect
+                from anywhere in the world, making it easy for people to find the
+                guidance and support they need, no matter where they are.
+            </p>
+            <p>
+                Mentorship programs today are run manually and ineffectively, which is
+                why we have developed a flexible and customizable platform that can be
+                tailored to meet the specific needs of each organization. We work
+                closely with our clients to understand their goals and objectives, and
+                we use this information to create personalized mentorship programs
+                that deliver tangible results.
+            </p>
+            <p>
+                Our team is made up of experienced professionals who are passionate
+                about mentorship and learning. We are committed to providing the
+                highest level of service to our clients, and we are constantly looking
+                for ways to improve our platform and expand our offerings.
+            </p>
+            <p>
+                At Mentorshala, we are driven by our mission to empower people through
+                mentorship and learning and will continue to partner with the world's
+                leading companies to bring this mission into reality.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2>Mentor Responsibilities</h2>
+                <ul>
+                    <li>
+                        <span class="tick"></span><span>Provide guidance and support to mentees.</span>
+                    </li>
+                    <li>
+                        <span class="tick"></span><span>Share knowledge and expertise in relevant areas.</span>
+                    </li>
+                    <li>
+                        <span class="tick"></span><span>Help mentees set goals and develop plans to achieve them.</span>
+                    </li>
+                    <li>
+                        <span class="tick"></span><span>Offer constructive feedback and encouragement.</span>
+                    </li>
+                    <li>
+                        <span class="tick"></span><span>Assist mentees in building professional networks.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Mentee Responsibilities</h2>
+                <ul>
+                    <li>
+                        <span class="tick"></span>Be open to learning and receiving
+                        feedback.
+                    </li>
+                    <li>
+                        <span class="tick"></span>Take initiative in seeking guidance and
+                        advice.
+                    </li>
+                    <li>
+                        <span class="tick"></span>Set clear goals and communicate them to
+                        the mentor.
+                    </li>
+                    <li>
+                        <span class="tick"></span>Actively participate in mentoring
+                        sessions.
+                    </li>
+                    <li>
+                        <span class="tick"></span>Show gratitude and respect towards the
+                        mentor.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <div class="image-box">
+                <img src="/assests/lack of mentorship.webp" alt="Mentor Image" />
+            </div>
+            <div class="image-box">
+                <img src="/assests/aboutimg.jpg" alt="Mentee Image" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>What Our Mentors and Mentees Say</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Mentorship Changed My Career</h3>
+                <p>
+                    <em>"Thanks to my mentor, I was able to navigate through difficult
+                        career decisions and achieve my goals. Mentorship truly made a
+                        difference in my professional life."</em>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Grateful for My Mentee Experience</h3>
+                <p>
+                    <em>"Being a mentee has been an incredible journey. I've gained
+                        valuable insights, learned new skills, and expanded my network.
+                        I'm thankful for the guidance and support of my mentor."</em>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Why I Love Being a Mentor</h3>
+                <p>
+                    <em>"Being a mentor is not just about sharing knowledge, but also
+                        about making a positive impact on someone's life. It's incredibly
+                        rewarding to see my mentees grow and succeed."</em>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Benefits of Having a Mentor</h3>
+                <p>
+                    <em>"Having a mentor has helped me gain confidence, set clear goals,
+                        and stay motivated. I highly recommend mentorship to anyone
+                        looking to advance their career."</em>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="image">
+        <img src="/assests/bg.jpg" alt="bg-image" />
+    </div>  <footer>
+        <div class="footer-panel-1">
+          <a href="#">Back to Top</a>
+        </div>
+        <div class="footer-style">
+          <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+              <div class="me-5 d-none d-lg-block text-white">
+                <span>Get connected with us on social networks:</span>
+              </div>
+              <div class="text-white">
+                <a href="" class="me-4">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </section>
+            <section class="">
+              <div class="container text-center text-white text-md-start mt-5">
+                <div class="row mt-3">
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      <i class="fas fa-gem me-3"></i>Mentorshala
+                    </h6>
+                    <p>
+                      At Mentorship Program, we are dedicated to fostering
+                      personal and professional growth through meaningful
+                      mentor-mentee relationships. Our mission is to connect
+                      individuals with experienced mentors who can guide, support,
+                      and inspire them on their journey towards success.
+                    </p>
+                  </div>
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
+                    <p>
+                      <a href="events.html" class="text-reset">Events</a>
+                    </p>
+                    <p>
+                      <a href="about.html" class="text-reset">About Us</a>
+                    </p>
+                    <p>
+                      <a href="ourMentor.html" class="text-reset">Find Mentors</a>
+                    </p>
+                    <p>
+                      <a href="home.html" class="text-reset">Home</a>
+                    </p>
+                  </div>
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> Uttrakhand, India</p>
+                    <p>
+                      <i class="fas fa-envelope me-3"></i>
+                      rahulkohli7078@gamil.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.05)">
+              © 2023 Copyright:
+              <a class="text-reset fw-bold">Mentorshala</a>
+            </div>
+          </footer>
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+    <script src="home.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+<script>
+    
+  document.addEventListener('DOMContentLoaded', function () {
+    var searchForm = document.getElementById('search-form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var searchQuery = document.getElementById('search').value.trim().toLowerCase();
+        var pages = {
+          'dashboard': 'mentor_profile.html',
+          'profile': 'mentee_profile.html',
+          'mentor': 'Ourmentor.html',
+          'about': 'about.html',
+          'blog': 'blog.html',
+          'events': 'events.html',
+          'developer': 'Ourmentor.html',
+          'web developer': 'Ourmentor.html',
+          'software engineer': 'Ourmentor.html',
+          'home' : 'home.html'
+        };
+        if (pages[searchQuery]) {
+          window.location.href = pages[searchQuery];
+        } else {
+          alert('Page not found: ' + searchQuery);
+        }
+      });
+    } else {
+      console.error('Search form not found');
+    }
+  });
+  document.getElementById("switchToMentor").addEventListener("click", function () {
+      window.location.href = "Ourmentor.html";
+    });
+</script>
+</html>
